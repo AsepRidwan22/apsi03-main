@@ -42,7 +42,6 @@ Route::group(['middleware' => ['role:koordinator|Admin']], function () {
     Route::resource('roles', RoleController::class);
     Route::resource('users', UserController::class);
     Route::resource('/rekap', RekapController::class);
-    
 });
 
 Route::group(['middleware' => 'auth', 'prefix' => 'messages', 'as' => 'messages'], function () {
@@ -56,8 +55,6 @@ Route::group(['middleware' => 'auth', 'prefix' => 'messages', 'as' => 'messages'
 Route::group(['middleware' => ['role:penguji|pebimbing']], function () {
     Route::resource('/penilaian', PenilaianController::class);
     Route::resource('/validasi', ValidasiController::class);
-    
-    
 });
 
 Route::resource('/rekaptulasi', RekaptulasiController::class);
